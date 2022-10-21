@@ -1,8 +1,18 @@
-# Unofficial environment OpenLitterMap 
+```
+  ____                   _      _ _   _            __  __             
+ / __ \                 | |    (_) | | |          |  \/  |            
+| |  | |_ __   ___ _ __ | |     _| |_| |_ ___ _ __| \  / | __ _ _ __  
+| |  | | '_ \ / _ \ '_ \| |    | | __| __/ _ \ '__| |\/| |/ _` | '_ \ 
+| |__| | |_) |  __/ | | | |____| | |_| ||  __/ |  | |  | | (_| | |_) |
+ \____/| .__/ \___|_| |_|______|_|\__|\__\___|_|  |_|  |_|\__,_| .__/ 
+       | |                                                     | |    
+       |_|                                                     |_|    
 
-Environment for OpenLitterMap (primarily development oriented)
+Unofficial environment OpenLitterMap 
+Environment for OpenLitterMap (first development oriented)
 Author: Julian Murphy
-[Go to official community Github](https://github.com/OpenLitterMap)
+```
+[Go to official OpenLitterMap community Github](https://github.com/OpenLitterMap)
 
 ## Instructions
 1. clone this repo
@@ -58,3 +68,7 @@ Note: `scripts/install.sh` script already add new line in the `/etc/hosts` when 
 ```sh
     ./olm up
 ```
+
+
+
+
