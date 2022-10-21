@@ -18,7 +18,7 @@ Author: Julian Murphy
 1. clone this repo
 
 ```sh
-    git clone git@github.com:fkmurphy/olm-env.git
+    git clone git@github.com:fkmurphy/olm-env.git && cd olm-env
 ```
 2. Copy environment variables example
 ```sh
@@ -52,9 +52,9 @@ Author: Julian Murphy
     ./olm install
 ```
 
-6. Go to https://olm.test
+6. Go to http://olm.test
 
-Note: `scripts/install.sh` script already add new line in the `/etc/hosts` when request sudoer permission
+Note: `scripts/install.sh` script already add new line in the `/etc/hosts` when request sudoer permission.
 
 
 ## Helper Scripts
