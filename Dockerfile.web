@@ -9,6 +9,5 @@ RUN apk add nodejs-current npm libpng libpng-dev libzip-dev mysql-client && \
     php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php');" && \
     php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=2.4.2
 
-
 RUN addgroup -S olm && adduser -S olm -G olm
 USER olm

@@ -19,7 +19,7 @@ services:
         OLM_FOLDER: "${OLM_FOLDER}"
     volumes:
       - $OLM_FOLDER:/var/www
-      - ./scripts:/scripts
+      - ./scripts/internal:/scripts:ro
     env_file: .env
 
   database:

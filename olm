@@ -1,0 +1,56 @@
+#!/bin/bash
+
+ORIG_PWD=$(pwd)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+
+cd "$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+scripts=./scripts
+
+#source ${scripts}/install.sh
+#source ${scripts}/dispatch.bash
+
+if [[ "$1" = '-nl' || "$1" = '--nologo' ]]; then
+  shift;
+else
+  >&2 cat ${scripts}/logo
+fi
+
+function showHelp() {
+    echo -e "
+    Command not found \n
+    Use:\n
+    install\t\tInstall environment (README.md)\n
+    up\t\t\tUp the environment == docker-compose up -d\n
+    artisan [params]\tUse artisan command\n
+    "
+}
+
+
+if [ ! -f ./.env ]; then
+    echo -e "<33;1>Create .env file<0>\n
+     <33;1>Copy .env.example -> .env and config<0>
+    "
+  exit 1
+else
+  source ./.env
+fi
+
+if [ $# -gt 0 ]; then
+    if [ -f ${scripts}/$1.sh ]; then
+        source ${scripts}/$1.sh
+        shift
+        run $*
+    else
+        showHelp
+        exit 1
+    fi
+else
+    showHelp
+    exit 1
+fi
