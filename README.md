@@ -39,22 +39,22 @@ Author: Julian Murphy
 
 5. Install project
 ```sh
-    sh scripts/install.sh
+    ./olm install
 ```
 
 6. Go to https://olm.test
 
-Note: `install.sh` script already add new line in the `/etc/hosts` when request sudoer permission
+Note: `scripts/install.sh` script already add new line in the `/etc/hosts` when request sudoer permission
 
 
 ## Helper Scripts
 
 ### Artisan
 ```sh
-    ./scripts/artisan.sh "cache:clear"
+    ./olm artisan "cache:clear"
 ```
 
 ### Up environment
 ```sh
-    ./scripts/up.sh
+    ./olm up
 ```
