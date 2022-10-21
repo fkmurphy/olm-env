@@ -4,7 +4,7 @@ dkc="docker-compose"
 
 $dkc down --remove-orphans
 
-#$dkc build # --no-cache
+$dkc build --no-cache
 
 $dkc run --rm olm \
     sh -c "composer install && npm install" && \
